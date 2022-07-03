@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#define MAX 10000					// 스택의 최대 크기 정의
+#define MAX 10001					// 스택의 최대 크기 정의
 
 class Stack 
 {
@@ -13,10 +13,8 @@ class Stack
 public:
 	Stack()
 	{
-		{
-			size = 0;
-			key = -1;
-		}
+		size = 0;
+		key = -1;
 	}
 	void push(int x)
 	{
@@ -75,10 +73,10 @@ int main()
 
 	for (int i = 0; i < repeat; i++)
 	{
-		getline(cin, cmd);				// 명령을 입력받음
+		getline(cin, cmd);								// 명령을 입력받음
 		if (cmd.find(" ") != string::npos)				// 명령에 공백이 있다면 -> 명령에 공백이 있는 건 push 뿐이다
-		{												// str.find(검색할 값)은 검색 값이 있는 경우 index를 반환. 없는 경우 string::nopos(쓰레기값)을 반환
-			int space_index = cmd.find(" ");		// 문자열 분리 기준이 될 index 값을 저장
+		{												// str.find(검색할 값)은 검색 값이 있는 경우 index를 반환. 없는 경우 string::npos(쓰레기값)을 반환
+			int space_index = cmd.find(" ");			// 문자열 분리 기준이 될 index 값을 저장
 			string cmd1 = cmd.substr(space_index + 1);			// cmd1은  push할 정수 값을 저장
 			int cmd_num = stoi(cmd1);							// 문자열 -> 정수 로 변환, stoi : string to integer
 
